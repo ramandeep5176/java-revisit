@@ -2,14 +2,14 @@
 
 //
 
-const bob = "bobwfw";
-const susy = "susy";
-const boby = "boby";
+// const amout = 50;
 
-function gen(name) {
-  console.log("my name is " + name);
+function calculate(convert) {
+  const conversion = convert * 25.4;
+
+  return conversion;
 }
 
+const newsd = calculate(10);
 
-gen(bob)
-
+console.log(newsd);
