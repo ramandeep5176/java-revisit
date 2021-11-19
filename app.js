@@ -3,13 +3,19 @@
 //
 
 // const amout = 50;
+// const ram = 5;
+// function calculate(conversion) {
+//   return conversion * 9;
+// }
 
-function calculate(convert) {
-  const conversion = convert * 25.4;
+// const newsd = calculate(ram);
 
-  return conversion;
+// console.log(newsd);
+
+const person = 'ggff';
+
+if (person === "ggff") {
+  console.log(`gg`);
+}else{
+    console.log(`gggk`);
 }
-
-const newsd = calculate(10);
-
-console.log(newsd);
