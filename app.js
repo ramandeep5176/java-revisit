@@ -12,10 +12,17 @@
 
 // console.log(newsd);
 
-const person = 'ggff';
+// const person = 'ggff';
 
-if (person === "ggff") {
-  console.log(`gg`);
-}else{
-    console.log(`gggk`);
-}
+// if (person === "ggff") {
+//   console.log(`gg`);
+// }else{
+//     console.log(`gggk`);
+// }
+
+// let amount = 5;
+
+// while (amount <= 15) {
+//   console.log(amount);
+//   amount++;
+// }
