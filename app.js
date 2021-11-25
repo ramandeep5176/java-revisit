@@ -26,3 +26,15 @@
 //   console.log(amount);
 //   amount++;
 // }
+
+const one = document.querySelector(".one");
+const two = document.querySelector(".two");
+const three = document.querySelector(".three");
+const four = document.querySelector(".four");
+const active = document.querySelectorAll(".active");
+var na = document.getElementById( "four");
+
+four.addEventListener("click", toggle);
+function toggle() { 
+  na.classList.toggle("active");
+}
