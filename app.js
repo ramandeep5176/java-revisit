@@ -45,18 +45,50 @@
 //   document.two.textContent = two[randomNumber];
 // });
 
-const colors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+// const colors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 
-const btn = document.getElementById("btn");
-const color = document.querySelector(".color");
-const container = document.querySelector(".container");
+// const btn = document.getElementById("btn");
+// const color = document.querySelector(".color");
+// const container = document.querySelector(".container");
 
-btn.addEventListener("click", function () {
-  const randomNumber = getRandomNo();
-  document.body.style.backgroundColor = colors[randomNumber];
-  color.textContent = colors[randomNumber];
-});
+// btn.addEventListener("click", function () {
+//   let hexColor = "#";
+//   for (let i = 0; i < 6; i++) {
+//     hexColor += colors[getRandomNo()];
+//   }
 
-function getRandomNo() {
-  return Math.floor(Math.random() * colors.length);
-}
+//   document.body.style.backgroundColor = hexColor;
+//   color.textContent = hexColor;
+// });
+
+// function getRandomNo() {
+//   return Math.floor(Math.random() * colors.length);
+// }
+let count = 0;
+const btns = document.querySelectorAll(".btn");
+
+// const counterClass = document.querySelector(".counter");
+// const counter = document.querySelector("#counter");
+
+// btns.forEach(function (btn) {
+//   btn.addEventListener("click", function (e) {
+//     const conthh = e.currentTarget.classList;
+//     if (conthh.contains("increase")) {
+//       count++;
+//     }
+//     if (conthh.contains("decrease")) {
+//       count--;
+//     }
+//     if (conthh.contains("reset")) {
+//       count = 0;
+//     }
+//     if (count > 0) {
+//       document.body.style.color = "green";
+//     }
+//     if (count < 0) {
+//       document.body.style.color = "red";
+//     }
+
+//     counter.textContent = count;
+//   });
+// });

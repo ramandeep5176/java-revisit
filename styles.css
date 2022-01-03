@@ -102,7 +102,7 @@ fonts
 fonts
 =============
  */
-.nav-links {
+/* .nav-links {
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
@@ -118,4 +118,4 @@ fonts
 }
 body{
   background-color:green;
-}
+} */
