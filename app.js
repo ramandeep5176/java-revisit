@@ -127,10 +127,19 @@ const left = document.querySelector(".left");
 const right = document.querySelector(".right");
 const surprise = document.querySelector(".surprise");
 
+let current = 0;
+
 window.addEventListener("DOMContentLoaded", function () {
-  const datacopy = data[0];
+  const datacopy = data[current];
   job.textContent = datacopy.job;
   name.textContent = datacopy.name;
   info.textContent = datacopy.info;
   pic.src = datacopy.pic;
+});
+
+left.addEventListener("click", function () {
+  current--;
+});
+right.addEventListener("click", function () {
+  current++;
 });
