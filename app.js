@@ -130,16 +130,37 @@ const surprise = document.querySelector(".surprise");
 let current = 0;
 
 window.addEventListener("DOMContentLoaded", function () {
-  const datacopy = data[current];
+  showData(current);
+});
+
+function showData(mainData) {
+  const datacopy = data[mainData];
   job.textContent = datacopy.job;
   name.textContent = datacopy.name;
   info.textContent = datacopy.info;
   pic.src = datacopy.pic;
-});
+}
 
-left.addEventListener("click", function () {
-  current--;
-});
 right.addEventListener("click", function () {
   current++;
+
+  //
+  if (current > data.length - 1) {
+    current = 0;
+  }
+  showData(current);
+  //
+});
+left.addEventListener("click", function () {
+  current--;
+  //
+  if (current < 0) {
+    current = data.length - 1;
+  }
+
+  showData(current);
+});
+surprise.addEventListener("click", function () {
+  current = Math.floor(Math.random() * data.length);
+  showData(current);
 });
