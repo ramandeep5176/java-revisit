@@ -95,17 +95,8 @@ p {
 /* my code & delete after */
 /* my code & delete after */
 /* my code & delete after */
-.basic {
-  position: absolute;
-  top: 50%;
-}
+
 .basic-off {
   display: none;
 }
-.modal {
-  position: absolute;
-  top: 50%;
-}
-.modal-off {
-  display: none;
-}
+

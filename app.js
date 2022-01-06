@@ -180,11 +180,12 @@
 //   hide.classList.toggle("hide");
 // });
 
-// const toggle = document.querySelector(".toggle");
-// const basicOff = document.querySelector(".basic");
-// const modalOff = document.querySelector(".modal");
+const toggle = document.querySelectorAll(".toggle");
+const basic = document.querySelectorAll(".basic");
 
-// toggle.addEventListener("click", function () {
-//   basicOff.classList.toggle("basic-off");
-//   modalOff.classList.toggle("modal-off");
-// });
+toggle.forEach(function (off) {
+  off.addEventListener("click", function (e) {
+    const ques = e.currentTarget;
+    ques.classList.toggle("basic-off");
+  });
+});
