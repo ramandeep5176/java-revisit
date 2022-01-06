@@ -180,12 +180,12 @@
 //   hide.classList.toggle("hide");
 // });
 
-const toggle = document.querySelectorAll(".toggle");
-const basic = document.querySelectorAll(".basic");
+// const toggle = document.querySelectorAll(".container");
+// const basic = document.querySelectorAll(".basic");
 
-toggle.forEach(function (off) {
-  off.addEventListener("click", function (e) {
-    const ques = e.currentTarget;
-    ques.classList.toggle("basic-off");
-  });
-});
+// toggle.forEach(function (off) {
+//   off.addEventListener("click", function (e) {
+//     const ques = e.currentTarget;
+//     ques.classList.toggle("basic");
+//   });
+// });
