@@ -96,3 +96,9 @@ p {
 /* my code & delete after */
 /* my code & delete after */
 
+.container {
+  margin: 1rem 1rem;
+}
+.img {
+  height: 10rem;
+}
