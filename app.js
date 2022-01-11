@@ -275,7 +275,23 @@ const menu = [
 // code logic
 
 const container = document.querySelector(".container");
+const btns = document.querySelectorAll(".filter-btn");
 window.addEventListener("DOMContentLoaded", function () {
+  // filter method
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      // console.log(e.currentTarget.dataset.id);
+      const category = e.currentTarget.dataset.id;
+      // jibrish
+      const filter = menu.filter(function (e) {
+        console.log(e);
+      })
+      // end of jibrish
+    });
+    // console.log(e);
+  });
+  // filter method end
+
   let display = menu.map(function (data) {
     // console.log(data.desc);
     return `
@@ -289,7 +305,7 @@ window.addEventListener("DOMContentLoaded", function () {
    
         `;
   });
-  
+
   display = display.join("");
   container.innerHTML = display;
 });
