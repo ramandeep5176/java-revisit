@@ -272,6 +272,15 @@ const menu = [
   },
 ];
 
+// emp
+
+const exp = menu.reduce(function (total, category) {
+
+  return total
+},"all");
+console.log(exp);
+// emp end
+
 // code logic
 
 const container = document.querySelector(".container");
@@ -284,23 +293,20 @@ window.addEventListener("DOMContentLoaded", function () {
 // filter method
 btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
-    
     const category = e.currentTarget.dataset.id;
     const filtering = menu.filter(function (menuDatas) {
       if (menuDatas.category === category) {
-        
         return menuDatas;
       }
-    })
-    
+    });
+
     if (category === "all") {
-      return displayMenu(menu)
-    }
-    else{
+      return displayMenu(menu);
+    } else {
       displayMenu(filtering);
     }
-  })
-})
+  });
+});
 // filter method end
 
 function displayMenu(menuData) {
