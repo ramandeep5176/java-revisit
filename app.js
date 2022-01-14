@@ -272,42 +272,70 @@ const menu = [
   },
 ];
 
-// emp
-
-const exp = menu.reduce(function (total, category) {
-
-  return total
-},"all");
-console.log(exp);
-// emp end
+// console.log(exp);
 
 // code logic
 
 const container = document.querySelector(".container");
-const btns = document.querySelectorAll(".filter-btn");
-
+const containerBtn = document.querySelector(".container-btn");
+// console.log(btns);
 window.addEventListener("DOMContentLoaded", function () {
   displayMenu(menu);
-});
+  // emp
 
-// filter method
-btns.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    const category = e.currentTarget.dataset.id;
-    const filtering = menu.filter(function (menuDatas) {
-      if (menuDatas.category === category) {
-        return menuDatas;
+  // unique dynamic btns (working now)
+  const unique = menu.reduce(
+    function (total, item) {
+      const ggg = item.category;
+      if (!total.includes(ggg)) {
+        total.push(ggg);
+      }
+
+      // console.log(ggg);
+      return total;
+    },
+    ["all"]
+  );
+  // console.log(unique);
+  // dynamic btns
+
+  // dynamic btns ends
+  // unique dynamic btns ends
+  // dynamic btns
+
+  const ram = unique
+    .map(function (rama) {
+      return `
+    <button type="button" data-id=${rama} class="filter-btn">${rama}</button>
+    `;
+    })
+    .join("");
+  // display = ram;
+  containerBtn.innerHTML = ram;
+  // dynamic btns end
+  const btns = document.querySelectorAll(".filter-btn");
+// console.log(btns);
+  // filter method
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      const category = e.currentTarget.dataset.id;
+      const filtering = menu.filter(function (menuDatas) {
+        if (menuDatas.category === category) {
+          return menuDatas;
+        }
+      });
+
+      if (category === "all") {
+        return displayMenu(menu);
+      } else {
+        displayMenu(filtering);
       }
     });
-
-    if (category === "all") {
-      return displayMenu(menu);
-    } else {
-      displayMenu(filtering);
-    }
   });
+  // filter method end
 });
-// filter method end
+
+
 
 function displayMenu(menuData) {
   let display = menuData.map(function (data) {
