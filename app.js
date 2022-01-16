@@ -367,60 +367,108 @@
 
 // console.log(jdgrr, 66555,wjediu, ee, ew65,56,80000);
 
-const menu = [
-  {
-    id: 1,
-    title: "buttermilk pancakes",
-    category: "breakfast",
-    price: 15.99,
-    img: "./images/item-1.jpeg",
-  },
-  {
-    id: 7,
-    title: "bacon overflow",
-    category: "breakfast",
-    price: 8.99,
-  },
+// function show() {
+//   // map
+//   const container = document.querySelector(".container-btn");
+//   const ram = menu
+//   .map(function (ra) {
+//     const { id, title, price, img } = ra;
+//     return `<P>${id},${title},${price} ></p>`;
+//   })
+//   .join("");
+//   // console.log(ram);
+//   container.innerHTML = ram;
+//   // map end
+// }
 
-  {
-    id: 10,
-    title: "bison steak",
-    category: "dinner",
-    price: 22.99,
-    img: "./images/item-10.jpeg",
-  },
-];
-function show() {
-  // map
-  const container = document.querySelector(".container-btn");
-  const ram = menu
-    .map(function (ra) {
-      const { id, title, price, img } = ra;
-      return `<P>${id},${title},${price} ></p>`;
-    })
-    .join("");
-  // console.log(ram);
-  container.innerHTML = ram;
-  // map end
-}
+// // btn
+// const btns = document.querySelector(".btn");
 
-// btn
-const btns = document.querySelector(".btn");
-const btnsa = [{ btnName: "main button#1" }, { btnName: "main button2" }];
+// const rammm = btnsa
+// .map(function (roll) {
+//   const { btnName } = roll;
+//   return `<button class="filter-btn" >${btnName}</button>`;
+// })
+// .join("");
+// // console.log(rammm);
+// btns.innerHTML = rammm;
 
-const rammm = btnsa
-  .map(function (roll) {
-    const { btnName } = roll;
-    return `<button class="filter-btn" >${btnName}</button>`;
-  })
-  .join("");
-// console.log(rammm);
-btns.innerHTML = rammm;
+// // btn end
+// const click = document.querySelectorAll(".filter-btn");
+// click.forEach(function (e) {
+//   e.addEventListener("click", function (e) {
+//     // show();
+//     btns.style.color="red"
 
-// btn end
-const click = document.querySelectorAll(".filter-btn");
-click.forEach(function (e) {
-  e.addEventListener("click", function () {
-    show();
+//   });
+// });
+
+// async await
+// promise
+// const imgCont = document.querySelector(".img-con");
+const h1 = document.querySelector(".img-con1");
+const h2 = document.querySelector(".img-con2");
+const h3 = document.querySelector(".img-con3");
+// const image = "./images/item-1.jpeg";
+const btn = document.querySelector(".btn");
+
+btn.addEventListener("click", () => {
+  change(1000, h1, "green").then(() => {
+    change(1000, h2, "red").then(() => {
+      change(1000, h3, "green").catch((err) => {console.log(err);});
+    });
   });
 });
+
+function change(time, element, color) {
+  return new Promise((resolve, reject) => {
+    if (element) {
+      setTimeout(() => {
+        element.style.color = color;
+        resolve();
+      }, time);
+    } else {
+      reject(new Error(`wrong selection ${element}`));
+    }
+  });
+}
+
+// btn.addEventListener("click", () => {
+//   loadimg(image)
+//     .then((raman) => imgCont.appendChild(raman))
+//     .catch((err) => console.log(err));
+
+//   // console.log(image);
+// });
+// function loadimg(image) {
+//   return new Promise((resolve, reject) => {
+//     let img = new Image();
+//     img.addEventListener("load", () => {
+//       resolve(img);
+//     });
+//     img.addEventListener("error", () => {
+//       reject(new Error(`loading failed chexk : ${image}`));
+//     });
+//     img.src = image;
+//   });
+// }
+
+// old promise
+// const promise = new Promise((resolve, reject) => {
+//   let vall = 5;
+//   if (vall > 8) {
+//     resolve(`big`);
+//   } else {
+//     reject(`small`);
+//   }
+// });
+// promise
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((e) => {
+//     console.log(e);
+//   });
+// old promise end
+
+import { menu, btnsa } from "./utilsjs/data.js";
