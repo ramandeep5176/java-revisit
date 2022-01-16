@@ -406,32 +406,32 @@
 // async await
 // promise
 // const imgCont = document.querySelector(".img-con");
-const h1 = document.querySelector(".img-con1");
-const h2 = document.querySelector(".img-con2");
-const h3 = document.querySelector(".img-con3");
-// const image = "./images/item-1.jpeg";
-const btn = document.querySelector(".btn");
+// const h1 = document.querySelector(".img-con1");
+// const h2 = document.querySelector(".img-con2");
+// const h3 = document.querySelector(".img-con3");
+// // const image = "./images/item-1.jpeg";
+// const btn = document.querySelector(".btn");
 
-btn.addEventListener("click", () => {
-  change(1000, h1, "green").then(() => {
-    change(1000, h2, "red").then(() => {
-      change(1000, h3, "green").catch((err) => {console.log(err);});
-    });
-  });
-});
+// btn.addEventListener("click", () => {
+//   change(1000, h1, "green").then(() => {
+//     change(1000, h2, "red").then(() => {
+//       change(1000, h3, "green").catch((err) => {console.log(err);});
+//     });
+//   });
+// });
 
-function change(time, element, color) {
-  return new Promise((resolve, reject) => {
-    if (element) {
-      setTimeout(() => {
-        element.style.color = color;
-        resolve();
-      }, time);
-    } else {
-      reject(new Error(`wrong selection ${element}`));
-    }
-  });
-}
+// function change(time, element, color) {
+//   return new Promise((resolve, reject) => {
+//     if (element) {
+//       setTimeout(() => {
+//         element.style.color = color;
+//         resolve();
+//       }, time);
+//     } else {
+//       reject(new Error(`wrong selection ${element}`));
+//     }
+//   });
+// }
 
 // btn.addEventListener("click", () => {
 //   loadimg(image)
@@ -470,5 +470,48 @@ function change(time, element, color) {
 //     console.log(e);
 //   });
 // old promise end
+
+// async / await
+
+const h1 = document.querySelector(".img-con1");
+const h2 = document.querySelector(".img-con2");
+const h3 = document.querySelector(".img-con3");
+// const image = "./images/item-1.jpeg";
+const btn = document.querySelector(".btn");
+
+
+
+try {
+  btn.addEventListener('click', async ()=>{
+  await change(1000, h1, "green");
+  await change(1000, h2, "green");
+  await change(1000, h3, "green");
+})
+} catch (error) {
+  console.log(error);
+}
+
+
+// btn.addEventListener("click", () => {
+//   change(1000, h1, "green").then(() => {
+//     change(1000, h2, "red").then(() => {
+//       change(1000, h3, "green").catch((err) => {console.log(err);});
+//     });
+//   });
+// });
+
+
+function change(time, element, color) {
+  return new Promise((resolve, reject) => {
+    if (element) {
+      setTimeout(() => {
+        element.style.color = color;
+        resolve();
+      }, time);
+    } else {
+      reject(new Error(`wrong selection ${element}`));
+    }
+  });
+}
 
 import { menu, btnsa } from "./utilsjs/data.js";
