@@ -514,22 +514,31 @@
 
 import { menu, btnsa } from "./utilsjs/data.js";
 const btn = document.querySelector(".btn");
-
-btn.addEventListener('click',function () {
-  logic()
-})
-
+const path = "./pp/menu.json";
+btn.addEventListener("click", function () {
+  logic(path);
+});
 function logic() {
   const xhr = new XMLHttpRequest();
-  console.log(xhr);
-  xhr.open("GET", "./txt.txt");
+  // console.log();
+  xhr.open("GET", path);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText);
+      const data = JSON.parse(xhr.responseText);
+      console.log(data);
+      const newData = data
+        .map((item) => {
+          return `<P>${item.bb}</p>`;
+        })
+        .join("");
+      const div = document.createElement("a");
+      div.innerHTML = newData;
+      document.body.appendChild(div);
       //
-      const text = document.createElement("p");
-      text.textContent = xhr.responseText;
-      document.body.appendChild(text);
+      // const gt = xhr.responseText;
+      // const text = document.createElement("p");
+      // text.textContent = gt;
+      // document.body.appendChild(text);
       //
     } else {
       console.log({ text: xhr.statusText, status: xhr.status });
@@ -539,4 +548,6 @@ function logic() {
 }
 // logic();
 
-// in html
+// in htmlresy
+
+// JSON
