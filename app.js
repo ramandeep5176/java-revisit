@@ -512,42 +512,79 @@
 
 //ajax
 
-import { menu, btnsa } from "./utilsjs/data.js";
-const btn = document.querySelector(".btn");
-const path = "./pp/menu.json";
-btn.addEventListener("click", function () {
-  logic(path);
-});
-function logic() {
-  const xhr = new XMLHttpRequest();
-  // console.log();
-  xhr.open("GET", path);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      const data = JSON.parse(xhr.responseText);
-      console.log(data);
-      const newData = data
-        .map((item) => {
-          return `<P>${item.bb}</p>`;
-        })
-        .join("");
-      const div = document.createElement("a");
-      div.innerHTML = newData;
-      document.body.appendChild(div);
-      //
-      // const gt = xhr.responseText;
-      // const text = document.createElement("p");
-      // text.textContent = gt;
-      // document.body.appendChild(text);
-      //
-    } else {
-      console.log({ text: xhr.statusText, status: xhr.status });
-    }
-  };
-  xhr.send();
-}
+// const btn = document.querySelector(".btn");
+// const path = "./pp/menu.json";
+// btn.addEventListener("click", function () {
+//   logic(path);
+// });
+// function logic() {
+//   const xhr = new XMLHttpRequest();
+//   // console.log();
+//   xhr.open("GET", path);
+//   xhr.onreadystatechange = function () {
+//     if (xhr.readyState === 4 && xhr.status === 200) {
+//       const data = JSON.parse(xhr.responseText);
+//       console.log(data);
+//       const newData = data
+//         .map((item) => {
+//           return `<P>${item.bb}</p>`;
+//         })
+//         .join("");
+//       const div = document.createElement("a");
+//       div.innerHTML = newData;
+//       document.body.appendChild(div);
+//       //
+//       // const gt = xhr.responseText;
+//       // const text = document.createElement("p");
+//       // text.textContent = gt;
+//       // document.body.appendChild(text);
+//       //
+//     } else {
+//       console.log({ text: xhr.statusText, status: xhr.status });
+//     }
+//   };
+//   xhr.send();
+// }
 // logic();
 
 // in htmlresy
 
 // JSON
+
+export const menu = [
+  {
+    id: 1,
+    title: "buttermilk pancakes",
+    category: "breakfast",
+    price: 15.99,
+    img: "./images/item-1.jpeg",
+    desc: `I'm baby woke shssed `,
+  },
+  {
+    id: 10,
+    title: "bison steak",
+    category: "dinner",
+    price: 22.99,
+    img: "./images/item-10.jpeg",
+    desc: `skaing.`,
+  },
+];
+
+menu.forEach(function (data) {
+  // ext
+  const ram = data.desc;
+  const ram1 = data.img;
+  const ram12 = data.title;
+  // elements
+  const body = document.body;
+  const p = document.createElement("p");
+  const p12 = document.createElement("p");
+  const pr = document.createElement("img");
+
+  p.innerText = ram;
+  p12.innerText = ram12;
+  pr.src = ram1;
+  body.append(pr, p, p12);
+
+  // body.append(ram);
+});
